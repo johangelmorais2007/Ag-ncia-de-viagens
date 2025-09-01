@@ -1,0 +1,98 @@
+body {
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    background: url("img/praia.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+.formulario { 
+    margin-left: -600px;
+    background: rgba(255, 255, 255, 0.1); /* Fundo branco levemente transparente */
+    backdrop-filter: blur(10px);           /* Efeito fosco */
+    -webkit-backdrop-filter: blur(10px);   /* Suporte para Safari */
+    color: rgb(255, 255, 255);
+    padding: 60px; 
+    border-radius: 15px; 
+    width: 300px; 
+} 
+
+h1 { 
+    margin-top: 0; 
+    text-align: center; 
+    color: #ffffff; 
+    font-family: 'Arial', sans-serif;  
+    font-size: 32px; 
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+    font-style: italic;  
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4); 
+} 
+
+label { 
+    color: #ffffff; 
+    display: block; 
+    margin: 15px 0 10px; 
+    font-weight: bold; 
+    margin-left: -10px; 
+} 
+
+input, textarea { 
+    font-size: 17px;
+    background: transparent;
+    display: flex; 
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ffffff; 
+    border-radius: 8px; 
+    margin-left: -10px; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;  
+    margin-top: 15px;
+}
+
+button {
+    margin-left: -1px;
+    padding: 10px 104px; 
+    background-color: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-family: Arial, sans-serif; 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+button:hover {
+    background-color: #ffffff;
+    transform: scale(1.05); 
+}
+
+input::placeholder {
+    color: rgb(255, 255, 255);  
+}
+
+.formulario .register-link {
+    font-size: 17px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}

@@ -118,8 +118,8 @@ header .navbar {
 .hero-section{
     margin: 0; 
     font-family: Arial, sans-serif; 
-    background-color: var(--u-color);
-   /* background: url("") no-repeat center center fixed; */
+    
+    background: url("img/home.jpg") no-repeat center center fixed; 
     background-size: cover;
     display: flex; 
     justify-content: center; 

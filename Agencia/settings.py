@@ -22,13 +22,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'home',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    
+    # suas apps
+    "home",
+    "usuarios",
+    "viagens",
+    "reservas",
 ]
 
 MIDDLEWARE = [
@@ -71,6 +76,7 @@ DATABASES = {
         'HOST': os.environ.get("DB_HOST"),
         'USER': os.environ.get("DB_USER"),
         'PASSWORD': os.environ.get("DB_PASSWORD"),
+        'PORT': os.environ.get("DB_PORT", 5432),
     }
 }
 
@@ -119,4 +125,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+LOGIN_URL = "usuarios:login"
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "usuarios:login"
+
+
 
