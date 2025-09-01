@@ -1,23 +1,31 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from .models import Viagem
-from django.urls import reverse_lazy
-
-class ViagemListView(LoginRequiredMixin, ListView):
-    model = Viagem
-    template_name = "viagens/list.html"
-    login_url = "usuarios:login"
-
-class ViagemCreateView(LoginRequiredMixin, CreateView):
-    model = Viagem
-    fields = ["destino", "data"]
-    template_name = "viagens/forms.html"
-    success_url = reverse_lazy("viagens:list")
-    login_url = "usuarios:login"
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .models import Viagem, Agendamento
+from .forms import ViagemForm
 
 
-class ViagemDeleteView(LoginRequiredMixin, DeleteView):
-    model = Viagem
-    template_name = "viagens/deletar.html"
-    success_url = reverse_lazy("viagens:list")
-    login_url = "usuarios:login"
+def lista_viagens(request):
+    viagens = Viagem.objects.all()
+    return render(request, "viagens/lista_viagens.html", {"viagens": viagens})
+
+
+def criar_viagem(request):
+    if request.method == "POST":
+        form = ViagemForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("lista_viagens")
+    else:
+        form = ViagemForm()
+    return render(request, "viagens/criar_viagem.html", {"form": form})
+
+@login_required(login_url="/usuarios/login/")
+def agendar_viagem(request, viagem_id):
+    viagem = get_object_or_404(Viagem, id=viagem_id)
+    Agendamento.objects.create(usuario=request.user, viagem=viagem)
+    return redirect("minhas_viagens")
+
+@login_required(login_url="/usuarios/login/")
+def minhas_viagens(request):
+    agendamentos = Agendamento.objects.filter(usuario=request.user)
+    return render(request, "viagens/minhas_viagens.html", {"agendamentos": agendamentos})

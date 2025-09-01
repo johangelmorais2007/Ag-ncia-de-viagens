@@ -9,5 +9,5 @@ urlpatterns = [
     # Apps
     path("viagens/", include("viagens.urls")),
     path("usuarios/", include("usuarios.urls")),
-    path("reservas/", include("reservas.urls")),
+    
 ]

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Lista de Viagens</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'viagens/lista.css' %}">
+</head>
+<body>
+    <header>
+        <h1>🌍✈️ Agência de Viagens</h1>
+    </header>
+
+    <div class="container">
+        <h2>Viagens Disponíveis</h2>
+        
+        <div class="actions">
+            <a href="{% url 'criar_viagem' %}">➕ Cadastrar nova viagem</a>
+            <a href="{% url 'minhas_viagens' %}">🧳 Minhas viagens</a>
+        </div>
+
+        {% if viagens %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Destino</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Tipo</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for viagem in viagens %}
+                <tr>
+                    <td>{{ viagem.pais }}</td>
+                    <td>R$ {{ viagem.valor }}</td>
+                    <td>{{ viagem.data_viagem }}</td>
+                    <td>{{ viagem.get_tipo_display }}</td>
+                    <td>
+                        <a href="{% url 'agendar_viagem' viagem.id %}" class="btn btn-agendar">Agendar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <div class="empty">Nenhuma viagem cadastrada</div>
+        {% endif %}
+    </div>
+</body>
+</html>

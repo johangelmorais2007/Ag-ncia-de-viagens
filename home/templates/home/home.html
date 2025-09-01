@@ -4,30 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automaçao</title>
+    <title>VIAGENSTURR</title>
     <link rel="stylesheet" href="{% static 'home/home.css' %}">
 </head>
 <body>
     <header>
         <nav class="navbar section-content">
-            <a href="#" class="nav-logo">
+            <a href="{%url 'lista_viagens'%}" class="nav-logo">
                 <h2 class="logo-text">🌍✈️ AGÊNCIA DE VIAGENS</h2>
             </a>
             <ul class="nav-menu">
                 
                 <li class="nav-item">
-                    <a href="{% url 'reservas:list'%}" class="nav-link">ORÇAMEN                                         TO</a>
+                    <a href="{%url 'lista_viagens'%}" class="nav-link">VIAGENS</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'viagens:list'%}" class="nav-link">SOBRE
-                    </a>
+                <a href="{% url 'login'%}" class="nav-link">LOGIN</a>
                 </li>
-                <li class="nav-item">
-                <a href="{% url 'usuarios:login'%}" class="nav-link">LOGIN</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">CONTATO</a>
-                </li>
+                
             </ul>
         </nav>
     </header>
@@ -35,12 +29,14 @@
         <section class="hero-section">
             <div class="section-content">
                  <div class= "hero-details">
-                        <h2 class="title"> </h2>
-                        <h3 class="subtitle"> </h3>
-                        <p class="description"> </p>
+                        <h2 class="title">Viajar é Viver — Viaje com Quem Entende de Sonhos!</h2>
+                        <h3 class="subtitle">Oferecemos as melhores experiências com qualidade, segurança e preços que cabem no seu bolso 
+                            porque viajar bem é possível, e você merece viver momentos inesquecíveis!</h3>
+                        <p class="description">Na Melhor Agência de Viagens, acreditamos que cada viagem é uma nova história. 
+                            Por isso, unimos preços acessíveis, atendimento personalizado e roteiros incríveis para transformar seu sonho em realidade.</p>
                     <div class="buttons">
-                            <a href="#" class="button order-now">Orçamentos pre-planejados </a>
-                            <a href="#" class="button contact-us">contato</a>
+                            <a href="{% url 'criar_viagem'%}" class="button order-now">PROGRAMAR VIAGENS</a>
+                            <a href="{% url 'cadastro' %}" class="button contact-us"> se cadastrar</a>
                     </div>
                  </div>
                 

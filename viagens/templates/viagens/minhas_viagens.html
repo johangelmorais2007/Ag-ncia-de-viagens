@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Minhas Viagens</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'viagens/minhas.css' %}">
+</head>
+<body>
+    <header>
+        <h1>🧳 Minhas Viagens</h1>
+    </header>
+
+    <div class="container">
+        <h2>Viagens Agendadas</h2>
+        <div class="actions">
+            <a href="{% url 'lista_viagens' %}">🌍 Ver todas as viagens</a>
+        </div>
+
+        {% if agendamentos %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Destino</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for agendamento in agendamentos %}
+                <tr>
+                    <td>{{ agendamento.viagem.pais }}</td>
+                    <td>{{ agendamento.viagem.data_viagem }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <div class="empty">Você ainda não agendou nenhuma viagem.</div>
+        {% endif %}
+    </div>
+</body>
+</html>

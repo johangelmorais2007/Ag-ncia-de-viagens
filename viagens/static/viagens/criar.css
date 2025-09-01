@@ -1,0 +1,97 @@
+body {
+    margin: 0; 
+    color: #000;
+    font-family: Arial, sans-serif; 
+    background: url("img/cd.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+/* Container com efeito de vidro */
+.container { 
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #000000;
+    padding: 20px 50px;
+    border-radius: 15px; 
+    width: 400px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Título */
+h2 { 
+    margin-bottom: 25px; 
+    font-size: 28px; 
+    font-weight: bold; 
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Labels do Django form */
+form p label {
+    color: #000000;
+    display: block;
+    font-weight: bold;
+    margin: 12px 0 5px;
+    text-align: left;
+}
+
+/* Inputs */
+form p input, form p select, form p textarea {
+    font-size: 16px;
+    background: rgba(255,255,255,0.1);
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #000000; 
+    border-radius: 8px; 
+    color: #000000;
+}
+
+form p input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Botão principal */
+.btn {
+    padding: 12px 30px; 
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #f1f1f1;
+}
+
+/* Botão de voltar */
+.btn-secondary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Centralizar botão */
+.button-container {
+    margin-top: 15px;
+}

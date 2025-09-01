@@ -1,12 +1,5 @@
 from django.contrib import admin
-from .models import Viagem, ImagemViagem
+from .models import Viagem, Agendamento
 
-@admin.register(Viagem)
-class ViagemAdmin(admin.ModelAdmin):
-    list_display = ("nome_pais", "tempo", "preco", "criado_em")
-    search_fields = ("nome_pais",)
-    list_filter = ("tempo",)
-
-@admin.register(ImagemViagem)
-class ImagemViagemAdmin(admin.ModelAdmin):
-    list_display = ("viagem",)
+admin.site.register(Viagem)
+admin.site.register(Agendamento)

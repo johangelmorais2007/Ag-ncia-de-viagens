@@ -15,15 +15,14 @@ def cadastro(request):
 
         if User.objects.filter(username=username).exists():
             messages.error(request, "Usuário já existe")
-            return redirect("usuarios:cadastro")
+            return redirect("cadastro")   # ✅ sem namespace
 
         user = User.objects.create_user(username=username, email=email, password=senha)
         user.save()
         login_django(request, user)
-        return redirect("home")
+        return redirect("home")   # ✅ leva para a home
 
-
-def login_view(request):
+def login_view(request):   # ✅ renomeado pra evitar conflito
     if request.method == "GET":
         return render(request, "usuarios/login.html")
     else:
@@ -42,10 +41,8 @@ def login_view(request):
             return redirect("home")
         else:
             messages.error(request, "Email ou senha inválidos")
-            return redirect("usuarios:login")
+            return redirect("login")   # ✅ sem namespace
 
-
-@login_required(login_url="usuarios:login")
+@login_required(login_url="/usuarios/login/")  # ✅ usa name da rota
 def usuarios_home(request):
-    return render(request, "usuarios/home.html")
-
+    return render(request, "home/home.html")

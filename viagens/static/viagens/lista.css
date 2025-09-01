@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #004080;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.actions {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.actions a {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.6rem 1rem;
+    background: #004080;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.actions a:hover {
+    background: #0066cc;
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #004080;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+tr:hover {
+    background: #f0f8ff;
+}
+
+/* Botões */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-agendar {
+    background: #28a745;
+    color: white;
+}
+
+.btn-agendar:hover {
+    background: #218838;
+}
+
+.empty {
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+    color: #555;
+}

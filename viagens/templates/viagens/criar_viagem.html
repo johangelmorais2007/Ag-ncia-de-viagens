@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Criar Viagem</title>
+    <link rel="stylesheet" href="{% static 'viagens/criar.css' %}">
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <h2>🌍 Cadastrar Nova Viagem</h2>
+
+            <form method="post" class="form-box">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="button-container">
+                    <button type="submit" class="btn">Salvar</button>
+                </div>
+            </form>
+
+            <div class="actions">
+                <a href="{% url 'lista_viagens' %}" class="btn-secondary">← Voltar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

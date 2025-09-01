@@ -10,7 +10,7 @@
 <body>
     <div class="formulario">
         <h1>Cadastro</h1>
-        <form action="{% url 'usuarios:cadastro' %}" method="POST">
+        <form action="{% url 'cadastro' %}" method="POST">
             {% csrf_token %}
             
             <label for="username">Nome</label>
@@ -25,7 +25,7 @@
 
             <button type="submit">CADASTRAR</button>
             <div class = "register-link">
-                <p>Already have an account?<a href="{% url 'usuarios:login' %}"> LOGIN</a></p>
+                <p>Already have an account?<a href="{% url 'login' %}"> LOGIN</a></p>
             </div>
         </form>
     </div>

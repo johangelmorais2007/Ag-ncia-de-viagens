@@ -60,8 +60,8 @@ input, textarea {
 }
 
 button {
-    margin-left: -1px;
-    padding: 10px 104px; 
+    margin-left: 5px;
+    padding: 12px 130px; 
     background-color: #ffffff;
     border: none;
     color: rgb(0, 0, 0);
