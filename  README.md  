@@ -1,0 +1,23 @@
+# Agência de Viagens ✈️🌍
+
+Este é um sistema de **Agência de Viagens** desenvolvido em **Django** e containerizado com **Docker**.
+
+## 🚀 Tecnologias
+- Python 3.11
+- Django 5.2
+- PostgreSQL 15
+- Docker e Docker Compose
+
+---
+
+## 📦 Como rodar o projeto
+
+1. Clone este repositório:
+   ```bash
+   git clone <seu-repositorio>
+   cd Agência_de_viagens/django
+   sudo docker-compose up --build
+   Starting development server at http://0.0.0.0:8000/
+
+
+

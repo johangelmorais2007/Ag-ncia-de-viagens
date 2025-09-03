@@ -17,7 +17,7 @@ services:
       timeout: 5s
       retries: 5
 
-  app:   # 👈 tem que estar no mesmo nível de db
+  app:
     build:
       context: .
     ports:
@@ -27,12 +27,8 @@ services:
     command: >
       sh -c "python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
-    environment:
-      - DB_HOST=db
-      - DB_NAME=postgres
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
-      - DB_PORT=5432
+    env_file:
+      - .env
     depends_on:
       db:
         condition: service_healthy
